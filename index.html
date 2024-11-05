@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Entreprise de Nettoyage - Accueil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Importation des polices Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- En-tête avec la navigation -->
+    <header>
+      <nav>
+        <div class="logo">
+          <h1>ProClean</h1>
+        </div>
+        <ul class="navigation">
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#testimonials">Témoignages</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Bannière principale -->
+    <section class="banner" id="accueil">
+      <h2>Votre partenaire pour un nettoyage impeccable</h2>
+      <p>
+        Nous fournissons des services de nettoyage professionnels pour votre
+        maison et votre entreprise.
+      </p>
+      <a href="#contact" class="btn">Contactez-nous</a>
+    </section>
+
+    <!-- Section Services -->
+    <section id="services">
+      <h3>Nos Services</h3>
+      <div class="services-container">
+        <div class="service">
+          <h4>Nettoyage Résidentiel</h4>
+          <p>
+            Nous proposons des services de nettoyage complets pour votre maison,
+            adaptés à vos besoins.
+          </p>
+        </div>
+        <div class="service">
+          <h4>Nettoyage Commercial</h4>
+          <p>
+            Nos experts s'occupent du nettoyage de vos bureaux, commerces, et
+            autres espaces professionnels.
+          </p>
+        </div>
+        <div class="service">
+          <h4>Nettoyage de Fin de Chantier</h4>
+          <p>
+            Service dédié pour rendre vos locaux impeccables après des travaux
+            de rénovation ou de construction.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section À propos -->
+    <section id="about">
+      <h3>À Propos de Nous</h3>
+      <p>
+        ProClean Services est une entreprise spécialisée dans le nettoyage,
+        offrant des services de qualité adaptés aux besoins spécifiques de
+        chaque client.
+      </p>
+      <img src="images/equipe.jpg" alt="Notre Équipe" />
+    </section>
+
+    <!-- Section Témoignages -->
+    <section id="testimonials">
+      <h3>Témoignages</h3>
+      <div class="testimonials-container">
+        <div class="testimonial">
+          <p>"Service exceptionnel, je recommande vivement !"</p>
+          <h4>- Jean Dupont</h4>
+        </div>
+        <div class="testimonial">
+          <p>"Une équipe professionnelle et efficace."</p>
+          <h4>- Marie Martin</h4>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact">
+      <h3>Contactez-nous</h3>
+      <form action="#" method="post">
+        <input type="text" name="nom" placeholder="Votre nom" required />
+        <input type="email" name="email" placeholder="Votre email" required />
+        <input
+          type="tel"
+          name="telephone"
+          placeholder="Votre téléphone"
+          required
+        />
+        <textarea
+          name="message"
+          placeholder="Votre message"
+          required
+        ></textarea>
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+
+    <!-- Pied de page -->
+    <footer>
+      <p>&copy; 2024 ProClean Services. Tous droits réservés.</p>
+    </footer>
+
+    <!-- JavaScript pour l'effet de scroll dans l'en-tête -->
+    <script>
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+    </script>
+  </body>
+</html>
