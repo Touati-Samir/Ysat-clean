@@ -11,195 +11,665 @@
 
 /* Styles généraux */
 body {
+  font-family: Arial, sans-serif;
   margin: 0;
-  font-family: "Roboto", sans-serif;
-  color: var(--text-color);
-  background-color: var(--secondary-color);
-  line-height: 1.6;
+  color: #333;
+  background-color: #f5f5f5;
 }
 
-/* En-tête amélioré */
+/* Style pour le header */
 header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0px 2px 5px var(--shadow-light);
-  z-index: 1000;
+  background-color: #4caf50;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px 20px;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 1000;
 }
 
-header.scrolled {
-  background-color: rgba(255, 255, 255, 1);
-  box-shadow: 0px 4px 8px var(--shadow-hover);
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* Style du logo */
 .logo h1 {
   font-size: 24px;
-  color: var(--primary-color);
+  color: #ffffff;
+  font-weight: bold;
   margin: 0;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
+/* Navigation principale */
 .navigation {
   display: flex;
   gap: 20px;
 }
 
+.navigation li {
+  list-style: none;
+}
+
 .navigation a {
+  color: #ffffff;
   font-size: 16px;
-  color: var(--text-color);
+  text-decoration: none;
   font-weight: 500;
-  padding: 8px 15px;
-  border-radius: 5px;
-  transition: color 0.3s ease, background-color 0.3s ease;
+  transition: color 0.3s;
 }
 
 .navigation a:hover {
+  color: #c8e6c9;
+}
+
+/* Bouton burger pour petits écrans */
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.burger-menu span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+/* Styles responsive */
+@media (max-width: 768px) {
+  .navigation {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #4caf50;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .navigation.active {
+    display: flex;
+  }
+
+  .burger-menu {
+    display: flex;
+  }
+
+  .navigation li {
+    margin: 10px 0;
+  }
+
+  .navigation a {
+    font-size: 18px;
+  }
+}
+
+/* Navigation styling */
+.navigation {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Style pour la section Accueil */
+.accueil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  background-color: #f0f0f5;
+  text-align: center;
+  height: 70vh;
+}
+
+/* Amélioration du style du titre de l'accueil */
+.accueil h2 {
+  font-size: 54px;
+  background: linear-gradient(90deg, #4caf50, #81c784); /* Dégradé vert */
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.accueil p {
+  font-size: 22px;
+  color: #666;
+  margin-bottom: 30px;
+  max-width: 600px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.accueil .btn {
+  background-color: #4caf50;
   color: #fff;
-  background-color: var(--primary-color);
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
 }
 
-/* Animation pour l'apparition de l'en-tête */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
+.accueil .btn:hover {
+  background-color: #388e3c;
+}
+
+/* Style pour la section Nos Services */
+.services {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.services h3 {
+  font-size: 30px;
+  color: #4caf50;
+  margin-bottom: 30px;
+}
+
+.service-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-card h4 {
+  font-size: 22px;
+  color: #4caf50;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Style pour la section contact */
+.contact-section {
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-section h2 {
+  font-size: 36px;
+  color: #4caf50;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.contact-section p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Style pour le formulaire */
+.contact-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.contact-section input[type="text"],
+.contact-section input[type="email"],
+.contact-section input[type="tel"],
+.contact-section textarea {
+  width: 100%;
+  max-width: 600px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.contact-section textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.contact-section button[type="submit"] {
+  padding: 12px 30px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-section button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Bouton Burger */
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1001;
+}
+
+.burger-menu span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  transition: 0.3s;
+}
+
+/* Masquer la navigation par défaut sur petits écrans */
+@media (max-width: 768px) {
+  .navigation {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #4caf50; /* Fond vert pour le menu déroulant */
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  /* Afficher le bouton burger sur les petits écrans */
+  .burger-menu {
+    display: flex;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+  }
+
+  /* Styles pour afficher le menu lorsque le burger est activé */
+  .navigation.active {
+    display: flex;
+  }
+
+  .navigation li {
+    list-style: none;
+    margin: 10px 0; /* Espacement entre chaque lien */
+  }
+
+  .navigation li a {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: color 0.3s;
+  }
+
+  .navigation li a:hover {
+    color: #333; /* Changement de couleur au survol */
   }
 }
 
-header {
-  animation: fadeInDown 0.6s ease-out;
-}
-
-/* Bannière */
+/* Bannière avec un voile sombre pour améliorer la lisibilité */
 .banner {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 100px 20px;
-  background-image: url("images/banner.jpg");
+  background-image: url(); /* Assurez-vous d'ajouter une image ici */
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
   color: #fff;
   text-align: center;
   height: 70vh;
+  position: relative; /* Nécessaire pour le voile */
+}
+
+/* Voile sombre pour la bannière */
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Voile sombre avec opacité de 50% */
+  z-index: 1;
+}
+
+/* Texte de la bannière pour qu'il passe au-dessus du voile sombre */
+.banner h2,
+.banner p,
+.banner .btn {
+  position: relative;
+  z-index: 2;
 }
 
 .banner h2 {
   font-size: 48px;
-  margin-bottom: 10px;
+  color: #fff;
+  font-weight: bold;
 }
 
 .banner p {
   font-size: 20px;
-  max-width: 600px;
-  margin-bottom: 20px;
+  color: #e0e0e0; /* Couleur légèrement plus claire */
 }
 
 .banner .btn {
-  padding: 12px 24px;
   background-color: var(--button-color);
   color: #fff;
-  border: none;
+  padding: 12px 24px;
   border-radius: 5px;
   font-size: 18px;
-  transition: transform 0.3s ease;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
 .banner .btn:hover {
-  transform: scale(1.05);
+  background-color: #388e3c;
 }
 
-/* Sections */
-section {
-  padding: 60px 20px;
-}
-
-/* Section Services */
-#services {
+/* Style de la page des services */
+.services-page {
+  padding: 50px 20px;
   text-align: center;
+  background-color: #f9f9f9;
 }
 
-.services-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
+.services-page h2 {
+  font-size: 36px;
+  color: #4caf50;
+  margin-bottom: 40px;
 }
 
-.service {
-  background-color: var(--background-light);
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px var(--shadow-light);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 15px var(--shadow-hover);
-}
-
-.service h4 {
-  font-size: 20px;
-  color: var(--primary-color);
-  margin-top: 10px;
-}
-
-/* Section Contact */
-#contact form {
+.service-card-container {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: 600px;
+  gap: 20px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
-#contact input,
-#contact textarea {
-  margin-bottom: 15px;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0px 3px 6px var(--shadow-light);
+.service-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  text-align: left;
 }
 
-#contact button {
-  padding: 15px;
-  background-color: var(--button-color);
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-card h3 {
+  font-size: 24px;
+  color: #4caf50;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Responsivité */
+@media (min-width: 768px) {
+  .service-card-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .service-card {
+    width: 30%;
+  }
+}
+
+/* Style pour le bouton dans les sections */
+section .btn {
+  display: inline-block;
+  background-color: #4caf50;
   color: #fff;
-  border: none;
+  padding: 12px 24px;
+  margin-top: 20px;
+  text-decoration: none;
   font-size: 18px;
   border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s;
 }
 
-#contact button:hover {
+section .btn:hover {
   background-color: #388e3c;
-  transform: scale(1.05);
+}
+/* Style pour la section des tarifs */
+.tarifs {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
 }
 
-/* Pied de page */
-footer {
-  background-color: #333;
-  color: #fff;
+.tarifs h2 {
+  font-size: 36px;
+  color: #4caf50;
+  margin-bottom: 40px;
+}
+
+/* Style pour le tableau des tarifs */
+.tarif-table {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tarif-table thead {
+  background-color: #4caf50;
+  color: #ffffff;
+}
+
+.tarif-table th,
+.tarif-table td {
+  padding: 15px 20px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.tarif-table th {
+  font-weight: bold;
+}
+
+.tarif-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.tarif-table tbody tr:hover {
+  background-color: #e0f7fa;
+  cursor: default;
+}
+
+.tarif-table td {
+  color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .tarif-table {
+    width: 100%;
+  }
+
+  .tarif-table th,
+  .tarif-table td {
+    padding: 10px;
+  }
+}
+/* Style pour la section À propos de nous */
+.about-section {
+  padding: 80px 20px;
+  background-color: #ffffff;
+  max-width: 800px;
+  margin: 0 auto;
   text-align: center;
-  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  line-height: 1.8;
+}
+
+.about-section h2 {
+  font-size: 40px;
+  color: #4caf50;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.about-section h3 {
+  font-size: 28px;
+  color: #4caf50;
+  margin-top: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.about-section p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ajout de séparateurs */
+.about-section hr {
+  border: none;
+  height: 1px;
+  background-color: #ddd;
+  margin: 30px 0;
+  width: 80%;
+  max-width: 600px;
+}
+/* Réinitialisation des marges et paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corps de la page pour s'étendre en pleine hauteur */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Section principale pour occuper l'espace disponible */
+main,
+.accueil,
+.about-section,
+.tarifs,
+.services-page {
+  flex: 1;
+}
+
+/* Style pour le pied de page */
+footer {
+  background-color: #f9f9f9;
+  padding: 10px 20px;
+  text-align: center;
   font-size: 14px;
+  color: #555;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+/* Style pour la section témoignages */
+.testimonials-section {
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  font-size: 36px;
+  color: #4caf50;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+/* Style pour chaque carte de témoignage */
+.testimonial {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.testimonial p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.testimonial p:last-child {
+  font-style: italic;
+  text-align: right;
+  color: #333;
+  margin-top: 10px;
 }
